@@ -33,7 +33,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define arr_value 5669//arr for 44.1kHz
-#define adc_top 4095
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -124,7 +123,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
   // adc_top is 4095 and arr_value is the top of duty cycle
-  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,((adc_val*arr_value)/adc_top));//(adc_val*arr_value)/adc_top regladetres
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,((adc_val[0]*(uint16_t)arr_value)>>12));//(adc_val*arr_value)/adc_top regladetres
   }
   /* USER CODE END 3 */
 }
