@@ -130,7 +130,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
    HAL_ADC_Start(&hadc2);
-    max_vol=((float_t)(HAL_ADC_GetValue(&hadc2))*2.0)/4095.0;
+    max_vol=((float_t)(HAL_ADC_GetValue(&hadc2)))/4095.0;
     uint16_t pwm= (uint16_t)((max_vol*(float_t)adc_val[0]*(float_t)arr_value)/4095.0);
   // adc_top is 4095 and arr_value is the top of duty cycle
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,pwm);
