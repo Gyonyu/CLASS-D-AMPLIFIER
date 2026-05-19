@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <stdint.h>
+#include "stm32h5xx_hal_tim.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -110,9 +110,12 @@ int main(void)
   MX_TIM1_Init();
   MX_ICACHE_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_val, 1);
-  /* USER CODE END 2 */
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_val, 2);
   HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+  /* USER CODE END 2 */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   
@@ -123,7 +126,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
   // adc_top is 4095 and arr_value is the top of duty cycle
-  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,((adc_val[0]*(uint16_t)arr_value)>>12));//(adc_val*arr_value)/adc_top regladetres
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,((adc_val[0]*arr_value)>>12));//(adc_val*arr_value)/adc_top regladetres
+  //__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,2500);//(adc_val*arr_value)/adc_top regladetres
   }
   /* USER CODE END 3 */
 }
