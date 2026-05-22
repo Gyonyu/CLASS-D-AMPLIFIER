@@ -1280,6 +1280,168 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:L"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at -1.27 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "L"
+				(at 1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Inductor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "L_0_1"
+				(arc
+					(start 0 2.54)
+					(mid 0.6323 1.905)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 -0.635)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -1.905)
+					(end 0 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R_Potentiometer"
 			(pin_names
 				(offset 1.016)
@@ -2883,6 +3045,12 @@
 		(uuid "0d2957f1-3952-4515-b4a0-aadaa52c3f92")
 	)
 	(junction
+		(at 116.84 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0ee39bc9-ae91-4f67-b78e-6a6dac8f24d7")
+	)
+	(junction
 		(at 76.2 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2905,6 +3073,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6396d1fd-edcc-4263-b73e-f0a4708ab554")
+	)
+	(junction
+		(at 116.84 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6a9f7c60-326c-4568-b923-8bbecdec721f")
 	)
 	(junction
 		(at 80.01 77.47)
@@ -2961,16 +3135,6 @@
 			(type default)
 		)
 		(uuid "0137ff48-2c56-45a4-92ad-df8107e2139d")
-	)
-	(wire
-		(pts
-			(xy 113.03 45.72) (xy 123.19 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "03b5f668-b196-4244-bed4-068a6240f1a1")
 	)
 	(wire
 		(pts
@@ -3084,7 +3248,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 58.42) (xy 96.52 58.42)
+			(xy 96.52 58.42) (xy 116.84 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3174,16 +3338,6 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 45.72) (xy 113.03 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5265441b-f233-43c1-8e80-2374b32c4f4e")
-	)
-	(wire
-		(pts
 			(xy 60.96 85.09) (xy 80.01 85.09)
 		)
 		(stroke
@@ -3244,6 +3398,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 50.8) (xy 116.84 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7880ce39-5375-44bd-9aa5-96997fdb473a")
+	)
+	(wire
+		(pts
 			(xy 73.66 44.45) (xy 73.66 48.26)
 		)
 		(stroke
@@ -3264,6 +3428,26 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 58.42) (xy 123.19 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "827702fb-013b-4424-b96a-37345868ec31")
+	)
+	(wire
+		(pts
+			(xy 96.52 43.18) (xy 106.68 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "849f30d6-1ead-44b1-a0d4-6a9f95118527")
+	)
+	(wire
+		(pts
 			(xy 86.36 36.83) (xy 86.36 35.56)
 		)
 		(stroke
@@ -3281,6 +3465,16 @@
 			(type default)
 		)
 		(uuid "8cab986f-44b2-4288-bca4-55dc15f1f18a")
+	)
+	(wire
+		(pts
+			(xy 123.19 58.42) (xy 123.19 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cbebd65-d02d-4222-b16f-5796fcb298b6")
 	)
 	(wire
 		(pts
@@ -3454,16 +3648,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 43.18) (xy 123.19 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e188ffbf-364e-4a54-9393-267d624b4604")
-	)
-	(wire
-		(pts
 			(xy 60.96 58.42) (xy 76.2 58.42)
 		)
 		(stroke
@@ -3491,6 +3675,16 @@
 			(type default)
 		)
 		(uuid "ec31e18e-5942-40ae-9511-679f152db505")
+	)
+	(wire
+		(pts
+			(xy 114.3 43.18) (xy 116.84 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eea536c4-cce8-4cd5-b8ec-45fac332114e")
 	)
 	(wire
 		(pts
@@ -3531,6 +3725,16 @@
 			(type default)
 		)
 		(uuid "f8fc5812-16dc-4302-be73-6e695b7b519c")
+	)
+	(wire
+		(pts
+			(xy 116.84 43.18) (xy 123.19 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb0548bd-4e88-4bf8-9a3e-9b247d9d5f9e")
 	)
 	(wire
 		(pts
@@ -4685,6 +4889,76 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Capacitor_AKL:C_0201")
+		(at 116.84 46.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cabf101-363f-47ea-a0ec-5e9d5348df0b")
+		(property "Reference" "C3"
+			(at 120.65 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470n"
+			(at 120.65 48.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm"
+			(at 117.8052 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD 0201 MLCC capacitor, Alternate KiCad Library"
+			(at 116.84 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "917b1299-9330-4ea0-a58c-e902fc8c3349")
+		)
+		(pin "2"
+			(uuid "7759cdbc-e466-4d24-940c-187d89c37105")
+		)
+		(instances
+			(project "Design"
+				(path "/40006f24-a25a-439b-add0-ed3afa522b6a"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x20_Socket")
 		(at 234.95 49.53 180)
 		(unit 1)
@@ -5411,6 +5685,74 @@
 			(project ""
 				(path "/40006f24-a25a-439b-add0-ed3afa522b6a"
 					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 110.49 43.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b861f55a-7b5c-4a5a-ae3f-c91735b26552")
+		(property "Reference" "L1"
+			(at 110.49 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "L"
+			(at 110.49 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_THT:L_Toroid_Horizontal_D7.8mm_P13.00mm_Diameter9-5mm_Amidon-T30"
+			(at 110.49 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 110.49 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 110.49 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "06883b44-7a73-4ec9-96e2-e7a0e54469dd")
+		)
+		(pin "1"
+			(uuid "a52a5f44-e8f7-4010-b995-bca4b230d1ac")
+		)
+		(instances
+			(project ""
+				(path "/40006f24-a25a-439b-add0-ed3afa522b6a"
+					(reference "L1")
 					(unit 1)
 				)
 			)
