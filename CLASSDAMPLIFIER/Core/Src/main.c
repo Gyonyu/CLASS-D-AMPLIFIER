@@ -34,7 +34,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define arr_value 5669//arr for 44.1kHz
-#define INV_4095 (1.0f / 4095.0f)
+#define INV_4095 (1.0f / 4095.0f*1.2f)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
