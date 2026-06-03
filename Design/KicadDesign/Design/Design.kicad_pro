@@ -674,7 +674,7 @@
       {
         "filename": "Design.kicad_sch",
         "name": "Design",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "40006f24-a25a-439b-add0-ed3afa522b6a"
       }
     ],
     "used_designators": "",
@@ -683,7 +683,7 @@
   "sheets": [
     [
       "40006f24-a25a-439b-add0-ed3afa522b6a",
-      "Root"
+      "Design"
     ]
   ],
   "text_variables": {},
