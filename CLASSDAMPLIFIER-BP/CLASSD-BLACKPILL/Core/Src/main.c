@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <math.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -49,7 +48,7 @@ TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
 volatile uint16_t adc_val[2];
-volatile float_t max_vol;
+volatile float max_vol;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,8 +114,8 @@ HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
 
     /* USER CODE BEGIN 3 */
 
-    max_vol=((float_t)(adc_val[1]))*INV_4095;
-    uint16_t pwm= (uint16_t)((max_vol*(float_t)adc_val[0]*(float_t)arr_value)*INV_4095);
+    max_vol=((float)(adc_val[1]))*INV_4095;
+    uint16_t pwm= (uint16_t)((max_vol*(float)adc_val[0]*(float)arr_value)*INV_4095);
   // adc_top is 4095 and arr_value is the top of duty cycle
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,pwm);
     
@@ -261,13 +260,17 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
+  if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_OC1REF;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_ENABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  sConfigOC.OCMode = TIM_OCMODE_ACTIVE;
+  sConfigOC.OCMode = TIM_OCMODE_TOGGLE;
   sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
@@ -278,9 +281,8 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sConfigOC.OCMode = TIM_OCMODE_TIMING;
-  sConfigOC.Pulse = 566;
-  if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
   {
     Error_Handler();
   }
