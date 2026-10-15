@@ -1,0 +1,3 @@
+VOCSET = ITRIP+ x RDS(ON) 
+VOCSET = 1.5*1.7m=2mv *too low RDS(ON) *
+minimum ocset is =0.5v around 300A trough the mosfets
